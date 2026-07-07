@@ -1,0 +1,12 @@
+name = "asado-invoice"
+type = "javascript"
+workers_dev = true
+main = "src/index.js"
+
+[env.production]
+  name = "asado-invoice-prod"
+
+[[rules]]
+type = "CompiledContentType"
+globs = ["**/*.js"]
+fallthrough = true
