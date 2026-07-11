@@ -3,10 +3,13 @@ type = "javascript"
 workers_dev = true
 main = "src/index.js"
 
-[env.production]
-  name = "asado-invoice-prod"
+[build]
+command = "echo 'Building...'"
 
-[[rules]]
-type = "CompiledContentType"
-globs = ["**/*.js"]
-fallthrough = true
+[env.production]
+routes = [
+  { pattern = "asado-invoice.mind-ppj.workers.dev/*", zone_name = "mind-ppj.workers.dev" }
+]
+
+[[observability.enabled]]
+enabled = true
